@@ -9,7 +9,9 @@ services:
     environment:
       - RUSTICL_ENABLE=panfrost
     volumes:
-      - ./workspace:/workspace
+      - .:/workspace                            # Entire project (includes .git/modules for submodule)
       - /lib/firmware:/lib/firmware:ro
+      - /home/alex/.claude:/root/.claude        # Claude Code auth session
+      - /home/alex/.ssh:/root/.ssh:ro           # SSH keys for git push
     stdin_open: true
     tty: true
