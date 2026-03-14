@@ -10,6 +10,13 @@ Detailed docs are in `../knowledge_base/` (parent repo):
 - `mali-g610-opencl-project.md` — hardware specs, backend architecture, implementation plan
 - `llama-cpp-dev-tooling.md` — build system, testing infrastructure, code style
 
+## You are running inside a Docker container
+
+All tools (cmake, clang-format, git, clinfo, etc.) are installed and available directly.
+Do NOT use `docker compose` or `docker run` — you are already in the container.
+Run commands directly: `cmake`, `./build/bin/test-backend-ops`, etc.
+The GPU is accessible at `/dev/dri/renderD128`. Source is at `/workspace/llama.cpp`.
+
 ## Quick Reference
 
 - **GPU**: Mali-G610 (Panfrost), OpenCL 3.0, subgroup size 16, 4 compute units
