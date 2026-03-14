@@ -1,0 +1,8 @@
+workspace/
+node_modules/
+build/
+*.gguf
+benchmark_*.json
+benchmark_*.txt
+output_cpu.txt
+output_gpu.txt

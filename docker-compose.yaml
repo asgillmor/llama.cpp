@@ -1,0 +1,15 @@
+services:
+  llama-opencl:
+    build: .
+    devices:
+      - /dev/dri:/dev/dri
+    group_add:
+      - "993"   # render group GID on this host
+      - video
+    environment:
+      - RUSTICL_ENABLE=panfrost
+    volumes:
+      - ./workspace:/workspace
+      - /lib/firmware:/lib/firmware:ro
+    stdin_open: true
+    tty: true
